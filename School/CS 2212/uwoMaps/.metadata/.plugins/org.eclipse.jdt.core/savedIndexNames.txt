@@ -1,0 +1,9 @@
+INDEX VERSION 1.131+C:\Users\park3\Documents\bitbucket\uwoMaps\.metadata\.plugins\org.eclipse.jdt.core
+1031682237.index
+2153717283.index
+1233676064.index
+4105799476.index
+3959137331.index
+825978242.index
+1067094681.index
+1865797976.index

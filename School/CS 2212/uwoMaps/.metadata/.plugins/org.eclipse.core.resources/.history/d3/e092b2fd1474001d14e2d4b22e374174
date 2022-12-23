@@ -1,0 +1,68 @@
+package uwoMaps;
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.ArrayList;
+
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JList;
+import javax.swing.JScrollPane;
+import javax.swing.ListModel;
+
+public class FavouritesPage extends JFrame implements ActionListener{
+	
+	JButton backButton = new JButton("Go Back");
+	JButton goBtn = new JButton("Go Favourites");
+	JLabel listLabel = new JLabel("List of Favourites: ");
+//	JList<Favourite> favList = new JList<Favourite>();
+	Favourite fav;
+	String userName = Main.MFRAME.user;
+	
+	public FavouritesPage(){
+		
+		
+		
+		Main.MFRAME.setVisible(false);
+		fav = UserData.getFavs(Main.CURRENTUSER);
+		
+		System.out.println(fav.getListOfFavs().get(0));
+//		ArrayList<POI> favList = fav.getListOfFavs();
+
+		backButton.setBounds(0, 0, 120, 40);
+		backButton.addActionListener(this);
+		
+		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		this.setLocationRelativeTo(null);
+		this.setLayout(null);
+		this.setSize(700,500);
+		this.setVisible(true);
+		this.setTitle("My Favourites");
+		
+		listLabel.setBounds(50,80,150,40);
+		goBtn.setBounds(350, 120, 120, 40);
+//		favList.setBounds(50,140,150,40);
+		
+//		this.add(new JScrollPane(testList)); 
+		this.add(listLabel);
+		this.add(backButton);
+		this.add(goBtn);
+	}
+	
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		// TODO Auto-generated method stub
+		if (e.getSource() == backButton) {
+			Main.MFRAME.setVisible(true);
+	        this.dispose();
+		}
+		if (e.getSource() == goBtn) {
+			Main.MFRAME.setVisible(true);
+	        this.dispose();
+		}
+	}
+
+}

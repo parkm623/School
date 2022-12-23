@@ -1,0 +1,36 @@
+[
+	{
+		"user": {
+			"username": "user1",
+			"password": "Password20",
+			"favourites": {
+						"alumni": ["AH 101", "Stairwell 3"],
+						"middlesex": ["MC 17", "Grad Club"],
+						"healthsci": ["HSB 240", "Stairwell 1"]
+						},
+			"userPOIs": {
+						"alumni": ["Morning Class"],
+						"middlesex": ["Fastest Route"],
+						"healthsci": ["Good Study Spot", "Best Bagels Are Here"]
+						},
+			"canEdit": "0"
+		}
+	},
+	{
+		"user": {
+			"username": "user2",
+			"password": "HelloWorld54",
+			"favourites": {
+						"alumni": ["Elevator A", "Washroom 103"],
+						"middlesex": ["Washroom 28E - Men", "MC 105B"],
+						"healthsci": ["HSB 11", "HSB 35"]
+						},
+			"userPOIs": {
+						"alumni": ["My Custom POI", "Water Fountain In Lobby"],
+						"middlesex": ["Quicker Elevator", "Wheelchair Ramp"],
+						"healthsci": ["Usually Busy", "Meet Group Here"]
+						},
+			"canEdit": "1"
+		}
+	}
+]
