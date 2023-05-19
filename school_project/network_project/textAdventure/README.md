@@ -34,16 +34,16 @@ Following the order, it should be start from discovery file.
 You can have more than one rooms and server, but the room always be connected.
 
 *Running one servers with one player*
-1. python3 discovery.py
-2. python3 player.py player_name room1_name
-3. python3 room.py -direction room1_name "Room expression."  items
+1. `python3 discovery.py`
+2. `python3 player.py player_name room1_name`
+3. `python3 room.py -direction room1_name "Room expression."  items`
 
 *Running two servers with two player*
-1. python3 discovery.py
-2. python3 player.py player1_name room1_name
-3. python3 player.py player2_name room1_name
-4. python3 room.py -direction room1_name room2_name "Room expression."  items
-5. python3 room.py -direction room2_name room1_name "Room expression."  items
+1. `python3 discovery.py`
+2. `python3 player.py player1_name room1_name`
+3. `python3 player.py player2_name room1_name`
+4. `python3 room.py -direction room1_name room2_name "Room expression."  items`
+5. `python3 room.py -direction room2_name room1_name "Room expression."  items`
 
 
 
