@@ -1,0 +1,28 @@
+\hypertarget{transactionHandler_8h_source}{}\doxysection{transaction\+Handler.\+h}
+\label{transactionHandler_8h_source}\index{backend/transactionHandler.h@{backend/transactionHandler.h}}
+\mbox{\hyperlink{transactionHandler_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#ifndef\ TRANSACTION\_HANDLER\_H}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#define\ TRANSACTION\_HANDLER\_H}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{user_8h}{user.h}}"{}}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{globals_8h}{globals.h}}"{}}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00018\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classTransactionHandler}{TransactionHandler}}\ \{}
+\DoxyCodeLine{00019\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{comment}{//\ Constants\ for\ transaction\ types}}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keyword}{enum\ class}\ \mbox{\hyperlink{classTransactionHandler_a3fe4542818df943a8c9eadbc3c190a55}{TransactionType}}\ \{}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classTransactionHandler_a3fe4542818df943a8c9eadbc3c190a55ae2c141e421f9862e778b1f7a0749989f}{DEPOSIT}},}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classTransactionHandler_a3fe4542818df943a8c9eadbc3c190a55ad46cbcb197473899801adc52f1d94deb}{WITHDRAW}},}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classTransactionHandler_a3fe4542818df943a8c9eadbc3c190a55abd50bfdaa74e237144552ad497048642}{BALANCE}}}
+\DoxyCodeLine{00025\ \ \ \ \ \};}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{comment}{//\ Methods}}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keyword}{static}\ std::string\ \mbox{\hyperlink{classTransactionHandler_abbd0f2fa847e749031b47b34bb504fcf}{handleTransaction}}(\mbox{\hyperlink{classTransactionHandler_a3fe4542818df943a8c9eadbc3c190a55}{TransactionType}}\ transactionType,\ \mbox{\hyperlink{classUser}{User}}*\ user,\ \textcolor{keywordtype}{double}\ value);}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classTransactionHandler_a04e34ad1289505fbbf76fd2dd7774251}{handleTransfer}}(\mbox{\hyperlink{classUser}{User}}*\ user,\ \mbox{\hyperlink{classUser}{User}}*\ recipient,\ \textcolor{keywordtype}{double}\ value);}
+\DoxyCodeLine{00029\ \};}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

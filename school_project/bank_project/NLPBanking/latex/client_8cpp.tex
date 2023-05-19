@@ -1,0 +1,66 @@
+\hypertarget{client_8cpp}{}\doxysection{frontend/client.cpp File Reference}
+\label{client_8cpp}\index{frontend/client.cpp@{frontend/client.cpp}}
+
+
+Client side application that connects to the NLP Banking server. Handles all user interaction and sends/receives messages to/from the server.  
+
+
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$cstring$>$}\newline
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+{\ttfamily \#include $<$sys/socket.\+h$>$}\newline
+{\ttfamily \#include $<$netinet/in.\+h$>$}\newline
+{\ttfamily \#include $<$arpa/inet.\+h$>$}\newline
+{\ttfamily \#include $<$openssl/ssl.\+h$>$}\newline
+{\ttfamily \#include $<$openssl/err.\+h$>$}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{client_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+\begin{DoxyCompactList}\small\item\em Connects to the NLP Banking server using TLS and interacts with the user through the terminal. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const int \mbox{\hyperlink{client_8cpp_a11717c934f77ad5167dac5d28562d85a}{PORT}} = 3001
+\item 
+const char $\ast$ \mbox{\hyperlink{client_8cpp_a2ba7b809d0d4cc7dbdc0e73a4b80d1b5}{SERVER\+\_\+\+IP}} = \char`\"{}99.\+242.\+91.\+57\char`\"{}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Client side application that connects to the NLP Banking server. Handles all user interaction and sends/receives messages to/from the server. 
+
+\begin{DoxyAuthor}{Author}
+Kaden Oseen 
+\end{DoxyAuthor}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{client_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{client_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4} 
+\index{client.cpp@{client.cpp}!main@{main}}
+\index{main@{main}!client.cpp@{client.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Connects to the NLP Banking server using TLS and interacts with the user through the terminal. 
+
+\begin{DoxyReturn}{Returns}
+int Exit code. 
+\end{DoxyReturn}
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{client_8cpp_a11717c934f77ad5167dac5d28562d85a}\label{client_8cpp_a11717c934f77ad5167dac5d28562d85a} 
+\index{client.cpp@{client.cpp}!PORT@{PORT}}
+\index{PORT@{PORT}!client.cpp@{client.cpp}}
+\doxysubsubsection{\texorpdfstring{PORT}{PORT}}
+{\footnotesize\ttfamily const int PORT = 3001}
+
+\Hypertarget{client_8cpp_a2ba7b809d0d4cc7dbdc0e73a4b80d1b5}\label{client_8cpp_a2ba7b809d0d4cc7dbdc0e73a4b80d1b5} 
+\index{client.cpp@{client.cpp}!SERVER\_IP@{SERVER\_IP}}
+\index{SERVER\_IP@{SERVER\_IP}!client.cpp@{client.cpp}}
+\doxysubsubsection{\texorpdfstring{SERVER\_IP}{SERVER\_IP}}
+{\footnotesize\ttfamily const char$\ast$ SERVER\+\_\+\+IP = \char`\"{}99.\+242.\+91.\+57\char`\"{}}
+

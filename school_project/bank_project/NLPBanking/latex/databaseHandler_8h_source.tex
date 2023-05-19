@@ -1,0 +1,35 @@
+\hypertarget{databaseHandler_8h_source}{}\doxysection{database\+Handler.\+h}
+\label{databaseHandler_8h_source}\index{backend/databaseHandler.h@{backend/databaseHandler.h}}
+\mbox{\hyperlink{databaseHandler_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#ifndef\ DATABASEHANDLER\_H}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#define\ DATABASEHANDLER\_H}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{user_8h}{user.h}}"{}}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <fstream>}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <sstream>}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{globals_8h}{globals.h}}"{}}}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00022\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classDatabaseHandler}{DatabaseHandler}}\ \{}
+\DoxyCodeLine{00023\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{comment}{//\ Constructor}}
+\DoxyCodeLine{00025\ \ \ \ \ \mbox{\hyperlink{classDatabaseHandler_ac27357d3431faf4fd6810483a24a43fd}{DatabaseHandler}}();}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{comment}{//\ Methods}}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classDatabaseHandler_a657ba3199d838b4d7bc444be3aebd02f}{updateUser}}(\textcolor{keyword}{const}\ std::string\&\ username,\ \textcolor{keywordtype}{double}\ value);}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classDatabaseHandler_a74e381502c557e241cef8b6232153f39}{updateUserBalance}}(\mbox{\hyperlink{classUser}{User}}*\ user);}
+\DoxyCodeLine{00029\ \ \ \ \ \mbox{\hyperlink{classUser}{User}}*\ \mbox{\hyperlink{classDatabaseHandler_a7ef0f9edb1883230d4cfe76c6d828353}{addUser}}(\textcolor{keyword}{const}\ std::string\&\ username,\ \textcolor{keyword}{const}\ std::string\&\ password,\ \textcolor{keywordtype}{double}\ balance);}
+\DoxyCodeLine{00030\ \ \ \ \ \mbox{\hyperlink{classUser}{User}}*\ \mbox{\hyperlink{classDatabaseHandler_ac5225044ce7f79a4978ad51efba43f63}{getUser}}(std::string\ username,\ std::string\ password);}
+\DoxyCodeLine{00031\ \ \ \ \ \mbox{\hyperlink{classUser}{User}}*\ \mbox{\hyperlink{classDatabaseHandler_a7f9560578f0c570d5ac916fd6c27d98d}{getRecipient}}(std::string\ username);}
+\DoxyCodeLine{00032\ \ \ \ \ std::vector<User>\&\ \mbox{\hyperlink{classDatabaseHandler_af2af516276677e34e74385011ce726f3}{getUsers}}();}
+\DoxyCodeLine{00033\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{comment}{//\ Array\ of\ Users}}
+\DoxyCodeLine{00035\ \ \ \ \ std::vector<User>\ \mbox{\hyperlink{classDatabaseHandler_ad5b57655072008e1fa2bf0a33ca09a55}{users}};}
+\DoxyCodeLine{00036\ \};}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

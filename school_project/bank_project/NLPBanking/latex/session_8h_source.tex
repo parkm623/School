@@ -1,0 +1,57 @@
+\hypertarget{session_8h_source}{}\doxysection{session.\+h}
+\label{session_8h_source}\index{backend/session.h@{backend/session.h}}
+\mbox{\hyperlink{session_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#ifndef\ SESSION\_H}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#define\ SESSION\_H}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <cstring>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <mutex>}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <unistd.h>}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{request_8h}{request.h}}"{}}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{databaseHandler_8h}{databaseHandler.h}}"{}}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{user_8h}{user.h}}"{}}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{globals_8h}{globals.h}}"{}}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{transactionHandler_8h}{transactionHandler.h}}"{}}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ <openssl/ssl.h>}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ <openssl/err.h>}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ <iomanip>}}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00031\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classSession}{Session}}\ \{}
+\DoxyCodeLine{00032\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{comment}{//\ Constructor\ and\ destructor}}
+\DoxyCodeLine{00034\ \ \ \ \ \mbox{\hyperlink{classSession}{Session}}(\textcolor{keywordtype}{int}\ socket,\ SSL*\ new\_ssl);}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classSession_a3d8c351ffa9130ab71abea07baf79dbe}{start\_session}}();}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classSession_ac1d7d7cd89077a840a6e52d3cd80f58e}{disconnect}}();}
+\DoxyCodeLine{00037\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{comment}{//\ Variables}}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classSession_a2b2f8581a9a76317d0539e1f76c8507d}{m\_socket}};}
+\DoxyCodeLine{00040\ \ \ \ \ SSL*\ \mbox{\hyperlink{classSession_aa10aed26ea7c02319c118af55076295e}{ssl}};}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classSession_abe0f05ced941fd1c523209650d4a542c}{nlp}};}
+\DoxyCodeLine{00042\ \ \ \ \ \mbox{\hyperlink{classUser}{User}}*\ \mbox{\hyperlink{classSession_ad223769adac991fc097a8a3cdedc2818}{user}};}
+\DoxyCodeLine{00043\ \ \ \ \ \mbox{\hyperlink{classDatabaseHandler}{DatabaseHandler}}\ \mbox{\hyperlink{classSession_ae042e8e52b76804a511ff12bdca109c6}{dbHandler}};}
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keyword}{const}\ std::string\ \mbox{\hyperlink{classSession_a6a91a545b4bc500c252e8f523ad1d117}{OPTIONS\_MESSAGE}}\ =\ \textcolor{stringliteral}{"{}\(\backslash\)n\(\backslash\)}}
+\DoxyCodeLine{00045\ \textcolor{stringliteral}{\ \ \ \ 1.\ View\ Balance\(\backslash\)n\(\backslash\)}}
+\DoxyCodeLine{00046\ \textcolor{stringliteral}{\ \ \ \ 2.\ Deposit\(\backslash\)n\(\backslash\)}}
+\DoxyCodeLine{00047\ \textcolor{stringliteral}{\ \ \ \ 3.\ Withdraw\(\backslash\)n\(\backslash\)}}
+\DoxyCodeLine{00048\ \textcolor{stringliteral}{\ \ \ \ 4.\ Transfer\ Funds\(\backslash\)n\(\backslash\)}}
+\DoxyCodeLine{00049\ \textcolor{stringliteral}{\ \ \ \ 5.\ View\ Transaction\ History\(\backslash\)n\(\backslash\)}}
+\DoxyCodeLine{00050\ \textcolor{stringliteral}{\ \ \ \ 6.\ Change\ to\ NLP\(\backslash\)n\(\backslash\)}}
+\DoxyCodeLine{00051\ \textcolor{stringliteral}{\ \ \ \ 7.\ LogOut\(\backslash\)n"{}};}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{comment}{//\ Methods}}
+\DoxyCodeLine{00054\ \ \ \ \ std::string\ \mbox{\hyperlink{classSession_ae8be55159821cd42c900c99080e587d2}{receive\_message}}();}
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classSession_a7922243a6a3470f14123353ef729273a}{send\_message}}(\textcolor{keyword}{const}\ std::string\&\ message);}
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classSession_aa33c3cd39bdf15b62ad80e85b5b042b6}{process\_request}}(\textcolor{keyword}{const}\ std::string\&\ request);}
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classSession_abc7ebaac52e2dea40d64c943f06be017}{handle\_request}}(std::string\ action,\ std::string\ value);}
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classSession_a6efb4648724434a85b1b7c5e58e5b635}{login}}();}
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classSession_aebbb40b55148764ee4fd4047793ae06b}{createAccount}}();}
+\DoxyCodeLine{00060\ \};}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

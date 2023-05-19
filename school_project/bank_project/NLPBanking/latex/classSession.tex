@@ -1,0 +1,246 @@
+\hypertarget{classSession}{}\doxysection{Session Class Reference}
+\label{classSession}\index{Session@{Session}}
+
+
+Class for handling a session with a client. Class handles individual client sessions on the NLP Banking server. Deals with all communication/interaction from server side.  
+
+
+
+
+{\ttfamily \#include $<$session.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classSession_a5458909c26c8032a95f4b8d237012ecf}{Session}} (int socket, SSL $\ast$new\+\_\+ssl)
+\begin{DoxyCompactList}\small\item\em Constructor for a new \doxylink{classSession}{Session} object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classSession_a3d8c351ffa9130ab71abea07baf79dbe}{start\+\_\+session}} ()
+\begin{DoxyCompactList}\small\item\em Starts a new session for a client connecting to the server Loops until the client disconnects or logs out, handling requests as sent by client. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classSession_ac1d7d7cd89077a840a6e52d3cd80f58e}{disconnect}} ()
+\begin{DoxyCompactList}\small\item\em Disconnects the client from the server. Closes socket and ends connection. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{classSession_ae8be55159821cd42c900c99080e587d2}{receive\+\_\+message}} ()
+\begin{DoxyCompactList}\small\item\em Receives a message from the client over a TLS-\/encrypted connection. Ensures client did not unexpectedly disconnect by checking if bytes received. Handles unexpected disconnects by returning the \char`\"{}exit\char`\"{} message. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classSession_a7922243a6a3470f14123353ef729273a}{send\+\_\+message}} (const std\+::string \&message)
+\begin{DoxyCompactList}\small\item\em Sends a message to the client over a TLS-\/encrypted connection. Converts message to a c\+\_\+str and sends it to the client via SSL\+\_\+write. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classSession_aa33c3cd39bdf15b62ad80e85b5b042b6}{process\+\_\+request}} (const std\+::string \&request)
+\begin{DoxyCompactList}\small\item\em Processes a request received from the client. Determines whether or not to interpret request with NLP. Message interpreted and action/value sent to handle\+\_\+request. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classSession_abc7ebaac52e2dea40d64c943f06be017}{handle\+\_\+request}} (std\+::string action, std\+::string value)
+\begin{DoxyCompactList}\small\item\em Handles a banking request received from the client. Handles specific requests, delegating to the \doxylink{classTransactionHandler}{Transaction\+Handler} class to perform transactions. Responsible for confirming user actions and sending appropriate messages to the client. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classSession_a6efb4648724434a85b1b7c5e58e5b635}{login}} ()
+\begin{DoxyCompactList}\small\item\em Login method for existing users Asks client for username and password, checks if user exists in database and if password is correct. Gives 3 attempts for successful login before disconnecting. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classSession_aebbb40b55148764ee4fd4047793ae06b}{create\+Account}} ()
+\begin{DoxyCompactList}\small\item\em Create account method for new users Asks client for username and password, checks if username is existing. Hashes password and stores new user in database. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{classSession_a2b2f8581a9a76317d0539e1f76c8507d}{m\+\_\+socket}}
+\item 
+SSL $\ast$ \mbox{\hyperlink{classSession_aa10aed26ea7c02319c118af55076295e}{ssl}}
+\item 
+bool \mbox{\hyperlink{classSession_abe0f05ced941fd1c523209650d4a542c}{nlp}}
+\item 
+\mbox{\hyperlink{classUser}{User}} $\ast$ \mbox{\hyperlink{classSession_ad223769adac991fc097a8a3cdedc2818}{user}}
+\item 
+\mbox{\hyperlink{classDatabaseHandler}{Database\+Handler}} \mbox{\hyperlink{classSession_ae042e8e52b76804a511ff12bdca109c6}{db\+Handler}}
+\item 
+const std\+::string \mbox{\hyperlink{classSession_a6a91a545b4bc500c252e8f523ad1d117}{OPTIONS\+\_\+\+MESSAGE}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class for handling a session with a client. Class handles individual client sessions on the NLP Banking server. Deals with all communication/interaction from server side. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classSession_a5458909c26c8032a95f4b8d237012ecf}\label{classSession_a5458909c26c8032a95f4b8d237012ecf} 
+\index{Session@{Session}!Session@{Session}}
+\index{Session@{Session}!Session@{Session}}
+\doxysubsubsection{\texorpdfstring{Session()}{Session()}}
+{\footnotesize\ttfamily Session\+::\+Session (\begin{DoxyParamCaption}\item[{int}]{socket,  }\item[{SSL $\ast$}]{new\+\_\+ssl }\end{DoxyParamCaption})}
+
+
+
+Constructor for a new \doxylink{classSession}{Session} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em socket} & The socket to communicate with the client. \\
+\hline
+{\em new\+\_\+ssl} & The SSL object to use for encryption. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classSession_aebbb40b55148764ee4fd4047793ae06b}\label{classSession_aebbb40b55148764ee4fd4047793ae06b} 
+\index{Session@{Session}!createAccount@{createAccount}}
+\index{createAccount@{createAccount}!Session@{Session}}
+\doxysubsubsection{\texorpdfstring{createAccount()}{createAccount()}}
+{\footnotesize\ttfamily bool Session\+::create\+Account (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Create account method for new users Asks client for username and password, checks if username is existing. Hashes password and stores new user in database. 
+
+\begin{DoxyReturn}{Returns}
+true if acccount creation is successful, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{classSession_ac1d7d7cd89077a840a6e52d3cd80f58e}\label{classSession_ac1d7d7cd89077a840a6e52d3cd80f58e} 
+\index{Session@{Session}!disconnect@{disconnect}}
+\index{disconnect@{disconnect}!Session@{Session}}
+\doxysubsubsection{\texorpdfstring{disconnect()}{disconnect()}}
+{\footnotesize\ttfamily void Session\+::disconnect (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Disconnects the client from the server. Closes socket and ends connection. 
+
+\Hypertarget{classSession_abc7ebaac52e2dea40d64c943f06be017}\label{classSession_abc7ebaac52e2dea40d64c943f06be017} 
+\index{Session@{Session}!handle\_request@{handle\_request}}
+\index{handle\_request@{handle\_request}!Session@{Session}}
+\doxysubsubsection{\texorpdfstring{handle\_request()}{handle\_request()}}
+{\footnotesize\ttfamily void Session\+::handle\+\_\+request (\begin{DoxyParamCaption}\item[{std\+::string}]{action,  }\item[{std\+::string}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Handles a banking request received from the client. Handles specific requests, delegating to the \doxylink{classTransactionHandler}{Transaction\+Handler} class to perform transactions. Responsible for confirming user actions and sending appropriate messages to the client. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em action} & The action to perform. \\
+\hline
+{\em value} & The value associated with the action. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classSession_a6efb4648724434a85b1b7c5e58e5b635}\label{classSession_a6efb4648724434a85b1b7c5e58e5b635} 
+\index{Session@{Session}!login@{login}}
+\index{login@{login}!Session@{Session}}
+\doxysubsubsection{\texorpdfstring{login()}{login()}}
+{\footnotesize\ttfamily bool Session\+::login (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Login method for existing users Asks client for username and password, checks if user exists in database and if password is correct. Gives 3 attempts for successful login before disconnecting. 
+
+\begin{DoxyReturn}{Returns}
+true if login is successful, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{classSession_aa33c3cd39bdf15b62ad80e85b5b042b6}\label{classSession_aa33c3cd39bdf15b62ad80e85b5b042b6} 
+\index{Session@{Session}!process\_request@{process\_request}}
+\index{process\_request@{process\_request}!Session@{Session}}
+\doxysubsubsection{\texorpdfstring{process\_request()}{process\_request()}}
+{\footnotesize\ttfamily void Session\+::process\+\_\+request (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{request }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Processes a request received from the client. Determines whether or not to interpret request with NLP. Message interpreted and action/value sent to handle\+\_\+request. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em request} & The request to process. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classSession_ae8be55159821cd42c900c99080e587d2}\label{classSession_ae8be55159821cd42c900c99080e587d2} 
+\index{Session@{Session}!receive\_message@{receive\_message}}
+\index{receive\_message@{receive\_message}!Session@{Session}}
+\doxysubsubsection{\texorpdfstring{receive\_message()}{receive\_message()}}
+{\footnotesize\ttfamily string Session\+::receive\+\_\+message (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Receives a message from the client over a TLS-\/encrypted connection. Ensures client did not unexpectedly disconnect by checking if bytes received. Handles unexpected disconnects by returning the \char`\"{}exit\char`\"{} message. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ssl} & The SSL object representing the TLS connection.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string The message received from the client. 
+\end{DoxyReturn}
+\Hypertarget{classSession_a7922243a6a3470f14123353ef729273a}\label{classSession_a7922243a6a3470f14123353ef729273a} 
+\index{Session@{Session}!send\_message@{send\_message}}
+\index{send\_message@{send\_message}!Session@{Session}}
+\doxysubsubsection{\texorpdfstring{send\_message()}{send\_message()}}
+{\footnotesize\ttfamily void Session\+::send\+\_\+message (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{message }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Sends a message to the client over a TLS-\/encrypted connection. Converts message to a c\+\_\+str and sends it to the client via SSL\+\_\+write. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ssl} & The SSL object representing the TLS connection. \\
+\hline
+{\em message} & The message to send to the client. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classSession_a3d8c351ffa9130ab71abea07baf79dbe}\label{classSession_a3d8c351ffa9130ab71abea07baf79dbe} 
+\index{Session@{Session}!start\_session@{start\_session}}
+\index{start\_session@{start\_session}!Session@{Session}}
+\doxysubsubsection{\texorpdfstring{start\_session()}{start\_session()}}
+{\footnotesize\ttfamily void Session\+::start\+\_\+session (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Starts a new session for a client connecting to the server Loops until the client disconnects or logs out, handling requests as sent by client. 
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classSession_ae042e8e52b76804a511ff12bdca109c6}\label{classSession_ae042e8e52b76804a511ff12bdca109c6} 
+\index{Session@{Session}!dbHandler@{dbHandler}}
+\index{dbHandler@{dbHandler}!Session@{Session}}
+\doxysubsubsection{\texorpdfstring{dbHandler}{dbHandler}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classDatabaseHandler}{Database\+Handler}} Session\+::db\+Handler\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classSession_a2b2f8581a9a76317d0539e1f76c8507d}\label{classSession_a2b2f8581a9a76317d0539e1f76c8507d} 
+\index{Session@{Session}!m\_socket@{m\_socket}}
+\index{m\_socket@{m\_socket}!Session@{Session}}
+\doxysubsubsection{\texorpdfstring{m\_socket}{m\_socket}}
+{\footnotesize\ttfamily int Session\+::m\+\_\+socket\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classSession_abe0f05ced941fd1c523209650d4a542c}\label{classSession_abe0f05ced941fd1c523209650d4a542c} 
+\index{Session@{Session}!nlp@{nlp}}
+\index{nlp@{nlp}!Session@{Session}}
+\doxysubsubsection{\texorpdfstring{nlp}{nlp}}
+{\footnotesize\ttfamily bool Session\+::nlp\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classSession_a6a91a545b4bc500c252e8f523ad1d117}\label{classSession_a6a91a545b4bc500c252e8f523ad1d117} 
+\index{Session@{Session}!OPTIONS\_MESSAGE@{OPTIONS\_MESSAGE}}
+\index{OPTIONS\_MESSAGE@{OPTIONS\_MESSAGE}!Session@{Session}}
+\doxysubsubsection{\texorpdfstring{OPTIONS\_MESSAGE}{OPTIONS\_MESSAGE}}
+{\footnotesize\ttfamily const std\+::string Session\+::\+OPTIONS\+\_\+\+MESSAGE\hspace{0.3cm}{\ttfamily [private]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \textcolor{stringliteral}{"{}\(\backslash\)n\(\backslash\)}}
+\DoxyCodeLine{\textcolor{stringliteral}{\ \ \ \ 1.\ View\ Balance\(\backslash\)n\(\backslash\)}}
+\DoxyCodeLine{\textcolor{stringliteral}{\ \ \ \ 2.\ Deposit\(\backslash\)n\(\backslash\)}}
+\DoxyCodeLine{\textcolor{stringliteral}{\ \ \ \ 3.\ Withdraw\(\backslash\)n\(\backslash\)}}
+\DoxyCodeLine{\textcolor{stringliteral}{\ \ \ \ 4.\ Transfer\ Funds\(\backslash\)n\(\backslash\)}}
+\DoxyCodeLine{\textcolor{stringliteral}{\ \ \ \ 5.\ View\ Transaction\ History\(\backslash\)n\(\backslash\)}}
+\DoxyCodeLine{\textcolor{stringliteral}{\ \ \ \ 6.\ Change\ to\ NLP\(\backslash\)n\(\backslash\)}}
+\DoxyCodeLine{\textcolor{stringliteral}{\ \ \ \ 7.\ LogOut\(\backslash\)n"{}}}
+
+\end{DoxyCode}
+\Hypertarget{classSession_aa10aed26ea7c02319c118af55076295e}\label{classSession_aa10aed26ea7c02319c118af55076295e} 
+\index{Session@{Session}!ssl@{ssl}}
+\index{ssl@{ssl}!Session@{Session}}
+\doxysubsubsection{\texorpdfstring{ssl}{ssl}}
+{\footnotesize\ttfamily SSL$\ast$ Session\+::ssl\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classSession_ad223769adac991fc097a8a3cdedc2818}\label{classSession_ad223769adac991fc097a8a3cdedc2818} 
+\index{Session@{Session}!user@{user}}
+\index{user@{user}!Session@{Session}}
+\doxysubsubsection{\texorpdfstring{user}{user}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classUser}{User}}$\ast$ Session\+::user\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+backend/\mbox{\hyperlink{session_8h}{session.\+h}}\item 
+backend/\mbox{\hyperlink{session_8cpp}{session.\+cpp}}\end{DoxyCompactItemize}

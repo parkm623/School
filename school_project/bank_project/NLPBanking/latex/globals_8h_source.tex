@@ -1,0 +1,33 @@
+\hypertarget{globals_8h_source}{}\doxysection{globals.\+h}
+\label{globals_8h_source}\index{backend/globals.h@{backend/globals.h}}
+\mbox{\hyperlink{globals_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#ifndef\ GLOBALS\_H}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#define\ GLOBALS\_H}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <unordered\_map>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <mutex>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <openssl/sha.h>}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <iomanip>}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <sstream>}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ <ctime>}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ <chrono>}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ <regex>}}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{comment}{//\ Forward\ declaration\ of\ Session\ class}}
+\DoxyCodeLine{00021\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classSession}{Session}};}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{comment}{//\ Global\ variables}}
+\DoxyCodeLine{00024\ \textcolor{keyword}{extern}\ std::unordered\_map<std::string,\ Session*>\ \mbox{\hyperlink{globals_8h_a5138e3bb03be48c3a68f978de2defe96}{active\_sessions}};}
+\DoxyCodeLine{00025\ \textcolor{keyword}{extern}\ std::mutex\ \mbox{\hyperlink{globals_8h_a847c26ffed867a00a59f696a0df8efba}{active\_sessions\_mutex}};}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \textcolor{comment}{//\ Global\ general\ use\ functions}}
+\DoxyCodeLine{00028\ std::string\ \mbox{\hyperlink{globals_8h_aa87471ea3c05459d2c0b8aba9c9a82dc}{get\_hash}}(\textcolor{keyword}{const}\ std::string\&\ str);}
+\DoxyCodeLine{00029\ std::string\ \mbox{\hyperlink{globals_8h_a267ef521bc704496e86a915730403e7b}{getTimestamp}}();}
+\DoxyCodeLine{00030\ std::string\ \mbox{\hyperlink{globals_8h_a6de78bf6f5b226ca36b5a58f4caa88d8}{removeCharacters}}(std::string\ str);}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

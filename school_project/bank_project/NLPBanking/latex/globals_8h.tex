@@ -1,0 +1,83 @@
+\hypertarget{globals_8h}{}\doxysection{backend/globals.h File Reference}
+\label{globals_8h}\index{backend/globals.h@{backend/globals.h}}
+
+
+Global variable declarations.  
+
+
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$unordered\+\_\+map$>$}\newline
+{\ttfamily \#include $<$mutex$>$}\newline
+{\ttfamily \#include $<$openssl/sha.\+h$>$}\newline
+{\ttfamily \#include $<$iomanip$>$}\newline
+{\ttfamily \#include $<$sstream$>$}\newline
+{\ttfamily \#include $<$ctime$>$}\newline
+{\ttfamily \#include $<$chrono$>$}\newline
+{\ttfamily \#include $<$regex$>$}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{globals_8h_aa87471ea3c05459d2c0b8aba9c9a82dc}{get\+\_\+hash}} (const std\+::string \&str)
+\item 
+std\+::string \mbox{\hyperlink{globals_8h_a267ef521bc704496e86a915730403e7b}{get\+Timestamp}} ()
+\begin{DoxyCompactList}\small\item\em Returns the current timestamp in the format \mbox{[}YYYY-\/\+MM-\/\+DD HH\+:\+MM\+:SS\mbox{]} Used to get timestamps for log messages. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{globals_8h_a6de78bf6f5b226ca36b5a58f4caa88d8}{remove\+Characters}} (std\+::string str)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+std\+::unordered\+\_\+map$<$ std\+::string, \mbox{\hyperlink{classSession}{Session}} $\ast$ $>$ \mbox{\hyperlink{globals_8h_a5138e3bb03be48c3a68f978de2defe96}{active\+\_\+sessions}}
+\item 
+std\+::mutex \mbox{\hyperlink{globals_8h_a847c26ffed867a00a59f696a0df8efba}{active\+\_\+sessions\+\_\+mutex}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Global variable declarations. 
+
+\begin{DoxyAuthor}{Author}
+Minsoo Park 
+\end{DoxyAuthor}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{globals_8h_aa87471ea3c05459d2c0b8aba9c9a82dc}\label{globals_8h_aa87471ea3c05459d2c0b8aba9c9a82dc} 
+\index{globals.h@{globals.h}!get\_hash@{get\_hash}}
+\index{get\_hash@{get\_hash}!globals.h@{globals.h}}
+\doxysubsubsection{\texorpdfstring{get\_hash()}{get\_hash()}}
+{\footnotesize\ttfamily std\+::string get\+\_\+hash (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{str }\end{DoxyParamCaption})}
+
+\Hypertarget{globals_8h_a267ef521bc704496e86a915730403e7b}\label{globals_8h_a267ef521bc704496e86a915730403e7b} 
+\index{globals.h@{globals.h}!getTimestamp@{getTimestamp}}
+\index{getTimestamp@{getTimestamp}!globals.h@{globals.h}}
+\doxysubsubsection{\texorpdfstring{getTimestamp()}{getTimestamp()}}
+{\footnotesize\ttfamily std\+::string get\+Timestamp (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Returns the current timestamp in the format \mbox{[}YYYY-\/\+MM-\/\+DD HH\+:\+MM\+:SS\mbox{]} Used to get timestamps for log messages. 
+
+\begin{DoxyReturn}{Returns}
+Current timestamp 
+\end{DoxyReturn}
+\Hypertarget{globals_8h_a6de78bf6f5b226ca36b5a58f4caa88d8}\label{globals_8h_a6de78bf6f5b226ca36b5a58f4caa88d8} 
+\index{globals.h@{globals.h}!removeCharacters@{removeCharacters}}
+\index{removeCharacters@{removeCharacters}!globals.h@{globals.h}}
+\doxysubsubsection{\texorpdfstring{removeCharacters()}{removeCharacters()}}
+{\footnotesize\ttfamily std\+::string remove\+Characters (\begin{DoxyParamCaption}\item[{std\+::string}]{str }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{globals_8h_a5138e3bb03be48c3a68f978de2defe96}\label{globals_8h_a5138e3bb03be48c3a68f978de2defe96} 
+\index{globals.h@{globals.h}!active\_sessions@{active\_sessions}}
+\index{active\_sessions@{active\_sessions}!globals.h@{globals.h}}
+\doxysubsubsection{\texorpdfstring{active\_sessions}{active\_sessions}}
+{\footnotesize\ttfamily std\+::unordered\+\_\+map$<$std\+::string, \mbox{\hyperlink{classSession}{Session}}$\ast$$>$ active\+\_\+sessions\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{globals_8h_a847c26ffed867a00a59f696a0df8efba}\label{globals_8h_a847c26ffed867a00a59f696a0df8efba} 
+\index{globals.h@{globals.h}!active\_sessions\_mutex@{active\_sessions\_mutex}}
+\index{active\_sessions\_mutex@{active\_sessions\_mutex}!globals.h@{globals.h}}
+\doxysubsubsection{\texorpdfstring{active\_sessions\_mutex}{active\_sessions\_mutex}}
+{\footnotesize\ttfamily std\+::mutex active\+\_\+sessions\+\_\+mutex\hspace{0.3cm}{\ttfamily [extern]}}
+

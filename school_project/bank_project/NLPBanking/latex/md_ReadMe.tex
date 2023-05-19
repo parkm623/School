@@ -1,0 +1,115 @@
+\label{md_ReadMe_autotoc_md0}%
+\Hypertarget{md_ReadMe_autotoc_md0}%
+Created by Kaden Oseen, David Alter, Minsoo Park, and Valeria Estrada\hypertarget{md_ReadMe_autotoc_md1}{}\doxysection{$<$strong$>$\+Client-\/\+Side$<$/strong$>$}\label{md_ReadMe_autotoc_md1}
+\hypertarget{md_ReadMe_autotoc_md2}{}\doxysubsection{$<$em$>$\+Requirements$<$/em$>$}\label{md_ReadMe_autotoc_md2}
+
+\begin{DoxyEnumerate}
+\item Linux system
+\item Internet connection
+\item Open\+SSL
+\item C++ compiler (G++)
+\end{DoxyEnumerate}\hypertarget{md_ReadMe_autotoc_md3}{}\doxysubsection{$<$em$>$\+Building and Running$<$/em$>$}\label{md_ReadMe_autotoc_md3}
+
+\begin{DoxyEnumerate}
+\item Build the client-\/side application using the command {\ttfamily make}.
+\begin{DoxyItemize}
+\item If you experience issues with Open\+SSL, it can be installed using the command {\ttfamily sudo apt-\/get install libssl-\/dev}. Some devices may need to run this but most do not.
+\end{DoxyItemize}
+\item Run the client-\/side application using the command {\ttfamily make run}.
+\end{DoxyEnumerate}\hypertarget{md_ReadMe_autotoc_md4}{}\doxysubsection{$<$em$>$\+Interaction$<$/em$>$}\label{md_ReadMe_autotoc_md4}
+
+\begin{DoxyEnumerate}
+\item Client will be asked if they have an existing account.
+\begin{DoxyItemize}
+\item If they do, they will be prompted for a username and password
+\begin{DoxyItemize}
+\item 3 attempts to successfully login
+\item For testing purposes, test usernames/passwords are referenced in \char`\"{}passwords.\+txt\char`\"{}, while their SHA256 hashes are stored in \char`\"{}users.\+txt\char`\"{} (the file that is used in the application)
+\end{DoxyItemize}
+\item If they do not, they will be prompted to create an account
+\end{DoxyItemize}
+\item Client will be asked if they would like to use natural language prompts.
+\begin{DoxyItemize}
+\item If they say y/yes, they will be able to make requests in plain English (eg. \char`\"{}\+I want to take out a hundred dollars\char`\"{} will be understood by the application as a withdrawal of \$100)
+\item If they say n/no, they will be prompted for each action in list format (eg. Type 1 for withdraw, 2 for deposit, etc.)
+\end{DoxyItemize}
+\item Clients may request to withdraw money from their account.
+\begin{DoxyItemize}
+\item If this amount exceeds their balance, they will be notified and transaction rejected.
+\item If successful, amount will be withdrawn and user notified of new balance
+\end{DoxyItemize}
+\item Clients may request to deposit money to their account.
+\begin{DoxyItemize}
+\item Account balance will be updated and user notified of new balance
+\end{DoxyItemize}
+\item Clients may request to transfer money.
+\begin{DoxyItemize}
+\item If transfer amount exceeds balance, transaction will be rejected.
+\item If transfer amount less than balance, user will be prompted whether they want to transfer to a NLPBanking client or external banking user.
+\begin{DoxyItemize}
+\item If NLPBanking client, they will be asked for the name.
+\begin{DoxyItemize}
+\item Name will then be verified by server that they are an existing client.
+\begin{DoxyItemize}
+\item If verified, transfer will go through and client notified of new balance.
+\item If nonexisting, user will be notified and transfer cancelled
+\end{DoxyItemize}
+\end{DoxyItemize}
+\item If external banking user, clients can enter either an email address or phone number of recipient
+\begin{DoxyItemize}
+\item \doxylink{classUser}{User} will be notified of pending transfer and their new balance
+\end{DoxyItemize}
+\end{DoxyItemize}
+\end{DoxyItemize}
+\item Clients may request to view their balance.
+\begin{DoxyItemize}
+\item Balance will be displayed to user
+\end{DoxyItemize}
+\item Clients may request to view their transaction log.
+\begin{DoxyItemize}
+\item Transaction log will be displayed to user with timestamps
+\end{DoxyItemize}
+\item Clients may request to change between NLP and non-\/\+NLP modes
+\item Clients may request to logout.
+\begin{DoxyItemize}
+\item Client will be logged out and SSL connection with server will be closed.
+\end{DoxyItemize}
+\end{DoxyEnumerate}\hypertarget{md_ReadMe_autotoc_md5}{}\doxysection{$<$strong$>$\+Server-\/\+Side$<$/strong$>$}\label{md_ReadMe_autotoc_md5}
+\hypertarget{md_ReadMe_autotoc_md6}{}\doxysubsection{$<$em$>$\+Requirements$<$/em$>$}\label{md_ReadMe_autotoc_md6}
+
+\begin{DoxyEnumerate}
+\item Linux system
+\item Access to port forwarding configuration on network
+\item Access to device IP address configuration on network
+\item Dependencies installed
+\item C++ compiler (G++)
+\item PM2 (optional)
+\end{DoxyEnumerate}\hypertarget{md_ReadMe_autotoc_md7}{}\doxysubsection{$<$em$>$\+Building and Deploying on a fresh Raspberry Pi$<$/em$>$}\label{md_ReadMe_autotoc_md7}
+
+\begin{DoxyEnumerate}
+\item Port forwarding must be enabled on network which Raspberry Pi is connected to (if you would like to connect from external IPs).
+\begin{DoxyEnumerate}
+\item Port 3001 must be forwarded to the Raspberry Pi.
+\item Raspberry Pi\textquotesingle{}s IP address configuration must be set to \char`\"{}static\char`\"{}.
+\item Public IPv4 address must be updated on the client-\/side application in \doxylink{client_8cpp}{client.\+cpp} line 20\+: {\ttfamily const char$\ast$ SERVER\+\_\+\+IP = \char`\"{}\+INSERT\+\_\+\+IP\+\_\+\+HERE\char`\"{};}
+\end{DoxyEnumerate}
+\item Ensure the following external dependencies are installed
+\begin{DoxyEnumerate}
+\item libcurl ({\ttfamily sudo apt-\/get install libcurl4-\/openssl-\/dev})
+\item jsoncpp ({\ttfamily sudo apt-\/get install libjsoncpp-\/dev})
+\item openssl ({\ttfamily sudo apt-\/get install libssl-\/dev})
+\end{DoxyEnumerate}
+\item Build the server-\/side application using the command {\ttfamily make}.
+\item Run the server-\/side application using the command {\ttfamily make run}.
+\begin{DoxyEnumerate}
+\item Alternatively, PM2 can be used with the script \char`\"{}start\+\_\+server.\+sh\char`\"{} to run the server in the background and ensure uptime.
+\begin{DoxyItemize}
+\item Note that PM2 requires Node\+JS to be installed on the system to install via npm with the command {\ttfamily npm install pm2 -\/g}
+\end{DoxyItemize}
+\item To start this, run the command {\ttfamily pm2 start start\+\_\+server.\+sh}
+\item Use command {\ttfamily pm2 logs} to view server logs
+\end{DoxyEnumerate}
+\item Server will then be listening for incoming connections on port 3001.
+\end{DoxyEnumerate}
+
+Note that with the current Raspberry Pi configuration (on my local network), the application can simply be tested by only using the client application from any network, until the Raspberry Pi is returned. 

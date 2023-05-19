@@ -1,0 +1,185 @@
+\hypertarget{classDatabaseHandler}{}\doxysection{Database\+Handler Class Reference}
+\label{classDatabaseHandler}\index{DatabaseHandler@{DatabaseHandler}}
+
+
+Class for handling the database.  
+
+
+
+
+{\ttfamily \#include $<$database\+Handler.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{Indent}\textbf{ Database\+Handler}\par
+{\em Constructor for the \doxylink{classDatabaseHandler}{Database\+Handler} class. }\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classDatabaseHandler_ac27357d3431faf4fd6810483a24a43fd}{Database\+Handler}} ()
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ update\+User}\par
+{\em Update the balance of a user.
+
+
+\begin{DoxyParams}{Parameters}
+{\em username} & The username of the user to update the balance of \\
+\hline
+{\em value} & The value to update the balance with \\
+\hline
+\end{DoxyParams}
+}\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{classDatabaseHandler_a657ba3199d838b4d7bc444be3aebd02f}{update\+User}} (const std\+::string \&username, double value)
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ update\+User\+Balance}\par
+{\em Update the balance of a user in users.\+txt file.
+
+
+\begin{DoxyParams}{Parameters}
+{\em user} & The user object to update the balance of \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the balance was updated successfully 
+\end{DoxyReturn}
+}\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{classDatabaseHandler_a74e381502c557e241cef8b6232153f39}{update\+User\+Balance}} (\mbox{\hyperlink{classUser}{User}} $\ast$user)
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ add\+User}\par
+{\em Add a \doxylink{classUser}{User} object to the users vector.
+
+
+\begin{DoxyParams}{Parameters}
+{\em username} & The username of the user to add \\
+\hline
+{\em password} & The password of the user to add \\
+\hline
+{\em balance} & The balance of the user to add \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the user was added successfully 
+\end{DoxyReturn}
+}\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classUser}{User}} $\ast$ \mbox{\hyperlink{classDatabaseHandler_a7ef0f9edb1883230d4cfe76c6d828353}{add\+User}} (const std\+::string \&username, const std\+::string \&password, double balance)
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ get\+User}\par
+{\em Get a \doxylink{classUser}{User} object from the users vector.
+
+
+\begin{DoxyParams}{Parameters}
+{\em username} & The username of the user to get \\
+\hline
+{\em password} & The password of the user to get \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+User$\ast$ The \doxylink{classUser}{User} object 
+\end{DoxyReturn}
+}\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classUser}{User}} $\ast$ \mbox{\hyperlink{classDatabaseHandler_ac5225044ce7f79a4978ad51efba43f63}{get\+User}} (std\+::string username, std\+::string password)
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ get\+Recipient}\par
+{\em Get a \doxylink{classUser}{User} object from the users vector.
+
+
+\begin{DoxyParams}{Parameters}
+{\em username} & The username of the user to get \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+User$\ast$ The \doxylink{classUser}{User} object 
+\end{DoxyReturn}
+}\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classUser}{User}} $\ast$ \mbox{\hyperlink{classDatabaseHandler_a7f9560578f0c570d5ac916fd6c27d98d}{get\+Recipient}} (std\+::string username)
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ get\+Users}\par
+{\em Get the users vector.
+
+\begin{DoxyReturn}{Returns}
+vector$<$\+User$>$\& The users vector 
+\end{DoxyReturn}
+}\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{classUser}{User}} $>$ \& \mbox{\hyperlink{classDatabaseHandler_af2af516276677e34e74385011ce726f3}{get\+Users}} ()
+\end{DoxyCompactItemize}
+\end{Indent}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{classUser}{User}} $>$ \mbox{\hyperlink{classDatabaseHandler_ad5b57655072008e1fa2bf0a33ca09a55}{users}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class for handling the database. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classDatabaseHandler_ac27357d3431faf4fd6810483a24a43fd}\label{classDatabaseHandler_ac27357d3431faf4fd6810483a24a43fd} 
+\index{DatabaseHandler@{DatabaseHandler}!DatabaseHandler@{DatabaseHandler}}
+\index{DatabaseHandler@{DatabaseHandler}!DatabaseHandler@{DatabaseHandler}}
+\doxysubsubsection{\texorpdfstring{DatabaseHandler()}{DatabaseHandler()}}
+{\footnotesize\ttfamily Database\+Handler\+::\+Database\+Handler (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classDatabaseHandler_a7ef0f9edb1883230d4cfe76c6d828353}\label{classDatabaseHandler_a7ef0f9edb1883230d4cfe76c6d828353} 
+\index{DatabaseHandler@{DatabaseHandler}!addUser@{addUser}}
+\index{addUser@{addUser}!DatabaseHandler@{DatabaseHandler}}
+\doxysubsubsection{\texorpdfstring{addUser()}{addUser()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classUser}{User}} $\ast$ Database\+Handler\+::add\+User (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{username,  }\item[{const std\+::string \&}]{password,  }\item[{double}]{balance }\end{DoxyParamCaption})}
+
+\Hypertarget{classDatabaseHandler_a7f9560578f0c570d5ac916fd6c27d98d}\label{classDatabaseHandler_a7f9560578f0c570d5ac916fd6c27d98d} 
+\index{DatabaseHandler@{DatabaseHandler}!getRecipient@{getRecipient}}
+\index{getRecipient@{getRecipient}!DatabaseHandler@{DatabaseHandler}}
+\doxysubsubsection{\texorpdfstring{getRecipient()}{getRecipient()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classUser}{User}} $\ast$ Database\+Handler\+::get\+Recipient (\begin{DoxyParamCaption}\item[{std\+::string}]{username }\end{DoxyParamCaption})}
+
+\Hypertarget{classDatabaseHandler_ac5225044ce7f79a4978ad51efba43f63}\label{classDatabaseHandler_ac5225044ce7f79a4978ad51efba43f63} 
+\index{DatabaseHandler@{DatabaseHandler}!getUser@{getUser}}
+\index{getUser@{getUser}!DatabaseHandler@{DatabaseHandler}}
+\doxysubsubsection{\texorpdfstring{getUser()}{getUser()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classUser}{User}} $\ast$ Database\+Handler\+::get\+User (\begin{DoxyParamCaption}\item[{std\+::string}]{username,  }\item[{std\+::string}]{password }\end{DoxyParamCaption})}
+
+\Hypertarget{classDatabaseHandler_af2af516276677e34e74385011ce726f3}\label{classDatabaseHandler_af2af516276677e34e74385011ce726f3} 
+\index{DatabaseHandler@{DatabaseHandler}!getUsers@{getUsers}}
+\index{getUsers@{getUsers}!DatabaseHandler@{DatabaseHandler}}
+\doxysubsubsection{\texorpdfstring{getUsers()}{getUsers()}}
+{\footnotesize\ttfamily vector$<$ \mbox{\hyperlink{classUser}{User}} $>$ \& Database\+Handler\+::get\+Users (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{classDatabaseHandler_a657ba3199d838b4d7bc444be3aebd02f}\label{classDatabaseHandler_a657ba3199d838b4d7bc444be3aebd02f} 
+\index{DatabaseHandler@{DatabaseHandler}!updateUser@{updateUser}}
+\index{updateUser@{updateUser}!DatabaseHandler@{DatabaseHandler}}
+\doxysubsubsection{\texorpdfstring{updateUser()}{updateUser()}}
+{\footnotesize\ttfamily bool Database\+Handler\+::update\+User (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{username,  }\item[{double}]{value }\end{DoxyParamCaption})}
+
+\Hypertarget{classDatabaseHandler_a74e381502c557e241cef8b6232153f39}\label{classDatabaseHandler_a74e381502c557e241cef8b6232153f39} 
+\index{DatabaseHandler@{DatabaseHandler}!updateUserBalance@{updateUserBalance}}
+\index{updateUserBalance@{updateUserBalance}!DatabaseHandler@{DatabaseHandler}}
+\doxysubsubsection{\texorpdfstring{updateUserBalance()}{updateUserBalance()}}
+{\footnotesize\ttfamily bool Database\+Handler\+::update\+User\+Balance (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classUser}{User}} $\ast$}]{user }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classDatabaseHandler_ad5b57655072008e1fa2bf0a33ca09a55}\label{classDatabaseHandler_ad5b57655072008e1fa2bf0a33ca09a55} 
+\index{DatabaseHandler@{DatabaseHandler}!users@{users}}
+\index{users@{users}!DatabaseHandler@{DatabaseHandler}}
+\doxysubsubsection{\texorpdfstring{users}{users}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{classUser}{User}}$>$ Database\+Handler\+::users\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+backend/\mbox{\hyperlink{databaseHandler_8h}{database\+Handler.\+h}}\item 
+backend/\mbox{\hyperlink{databaseHandler_8cpp}{database\+Handler.\+cpp}}\end{DoxyCompactItemize}

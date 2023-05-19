@@ -1,0 +1,160 @@
+\hypertarget{classRequest}{}\doxysection{Request Class Reference}
+\label{classRequest}\index{Request@{Request}}
+
+
+Class for making curl requests.  
+
+
+
+
+{\ttfamily \#include $<$request.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{Indent}\textbf{ Request}\par
+{\em Constructor for the \doxylink{classRequest}{Request} class
+
+
+\begin{DoxyParams}{Parameters}
+{\em input} & The user input to be sent to the NLP API \\
+\hline
+\end{DoxyParams}
+}\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classRequest_a0bd163c6ca9a86424c0d1b4897af5ce8}{Request}} (std\+::string \mbox{\hyperlink{classRequest_a521d09292501804fdcdbff0f19408395}{input}})
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ $\sim$\+Request}\par
+{\em Destructor for the \doxylink{classRequest}{Request} class Cleans up the curl object }\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classRequest_a4d57c725686701f773eb3630630a7ea2}{$\sim$\+Request}} ()
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ execute}\par
+{\em Execute the curl request to NLP API Creates a request to the NLP API with the user input and system message
+
+\begin{DoxyReturn}{Returns}
+true If the request was successful 
+
+false If the request failed 
+\end{DoxyReturn}
+}\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{classRequest_afdd4c7bdc380667a26e8176c0817c38e}{execute}} ()
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ result}\par
+{\em Get the result of the curl request
+
+\begin{DoxyReturn}{Returns}
+string The formatted response from the request 
+\end{DoxyReturn}
+}\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{classRequest_a27a4f9500082a5ac16c1efd0012fce0c}{result}} ()
+\end{DoxyCompactItemize}
+\end{Indent}
+\doxysubsection*{Static Private Member Functions}
+\begin{Indent}\textbf{ write\+Callback}\par
+{\em Callback function for the curl request
+
+
+\begin{DoxyParams}{Parameters}
+{\em contents} & The contents of the request \\
+\hline
+{\em size} & The size of each item in the contents \\
+\hline
+{\em nmemb} & The number of members in the contents \\
+\hline
+{\em userp} & Pointer to the json string \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+size\+\_\+t The size of the contents 
+\end{DoxyReturn}
+}\begin{DoxyCompactItemize}
+\item 
+static size\+\_\+t \mbox{\hyperlink{classRequest_af22ecf06426364169387ce40a59e04bd}{write\+Callback}} (void $\ast$contents, size\+\_\+t size, size\+\_\+t nmemb, void $\ast$userp)
+\end{DoxyCompactItemize}
+\end{Indent}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+CURL $\ast$ \mbox{\hyperlink{classRequest_a2444393720670c8aa8b8d0c3e0a330f4}{curl}}
+\item 
+std\+::string \mbox{\hyperlink{classRequest_a521d09292501804fdcdbff0f19408395}{input}}
+\item 
+std\+::string \mbox{\hyperlink{classRequest_ad0ee1188cb3f1abd8e791e376ecbf6be}{response}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class for making curl requests. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em input} & The user input to send to the server \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classRequest_a0bd163c6ca9a86424c0d1b4897af5ce8}\label{classRequest_a0bd163c6ca9a86424c0d1b4897af5ce8} 
+\index{Request@{Request}!Request@{Request}}
+\index{Request@{Request}!Request@{Request}}
+\doxysubsubsection{\texorpdfstring{Request()}{Request()}}
+{\footnotesize\ttfamily Request\+::\+Request (\begin{DoxyParamCaption}\item[{std\+::string}]{input }\end{DoxyParamCaption})}
+
+\Hypertarget{classRequest_a4d57c725686701f773eb3630630a7ea2}\label{classRequest_a4d57c725686701f773eb3630630a7ea2} 
+\index{Request@{Request}!````~Request@{$\sim$Request}}
+\index{````~Request@{$\sim$Request}!Request@{Request}}
+\doxysubsubsection{\texorpdfstring{$\sim$Request()}{~Request()}}
+{\footnotesize\ttfamily Request\+::$\sim$\+Request (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classRequest_afdd4c7bdc380667a26e8176c0817c38e}\label{classRequest_afdd4c7bdc380667a26e8176c0817c38e} 
+\index{Request@{Request}!execute@{execute}}
+\index{execute@{execute}!Request@{Request}}
+\doxysubsubsection{\texorpdfstring{execute()}{execute()}}
+{\footnotesize\ttfamily bool Request\+::execute (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{classRequest_a27a4f9500082a5ac16c1efd0012fce0c}\label{classRequest_a27a4f9500082a5ac16c1efd0012fce0c} 
+\index{Request@{Request}!result@{result}}
+\index{result@{result}!Request@{Request}}
+\doxysubsubsection{\texorpdfstring{result()}{result()}}
+{\footnotesize\ttfamily string Request\+::result (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{classRequest_af22ecf06426364169387ce40a59e04bd}\label{classRequest_af22ecf06426364169387ce40a59e04bd} 
+\index{Request@{Request}!writeCallback@{writeCallback}}
+\index{writeCallback@{writeCallback}!Request@{Request}}
+\doxysubsubsection{\texorpdfstring{writeCallback()}{writeCallback()}}
+{\footnotesize\ttfamily size\+\_\+t Request\+::write\+Callback (\begin{DoxyParamCaption}\item[{void $\ast$}]{contents,  }\item[{size\+\_\+t}]{size,  }\item[{size\+\_\+t}]{nmemb,  }\item[{void $\ast$}]{userp }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classRequest_a2444393720670c8aa8b8d0c3e0a330f4}\label{classRequest_a2444393720670c8aa8b8d0c3e0a330f4} 
+\index{Request@{Request}!curl@{curl}}
+\index{curl@{curl}!Request@{Request}}
+\doxysubsubsection{\texorpdfstring{curl}{curl}}
+{\footnotesize\ttfamily CURL$\ast$ Request\+::curl\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classRequest_a521d09292501804fdcdbff0f19408395}\label{classRequest_a521d09292501804fdcdbff0f19408395} 
+\index{Request@{Request}!input@{input}}
+\index{input@{input}!Request@{Request}}
+\doxysubsubsection{\texorpdfstring{input}{input}}
+{\footnotesize\ttfamily std\+::string Request\+::input\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classRequest_ad0ee1188cb3f1abd8e791e376ecbf6be}\label{classRequest_ad0ee1188cb3f1abd8e791e376ecbf6be} 
+\index{Request@{Request}!response@{response}}
+\index{response@{response}!Request@{Request}}
+\doxysubsubsection{\texorpdfstring{response}{response}}
+{\footnotesize\ttfamily std\+::string Request\+::response\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+backend/\mbox{\hyperlink{request_8h}{request.\+h}}\item 
+backend/\mbox{\hyperlink{request_8cpp}{request.\+cpp}}\end{DoxyCompactItemize}

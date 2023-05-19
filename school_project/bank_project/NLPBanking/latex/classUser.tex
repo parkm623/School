@@ -1,0 +1,200 @@
+\hypertarget{classUser}{}\doxysection{User Class Reference}
+\label{classUser}\index{User@{User}}
+
+
+Class for storing user data.  
+
+
+
+
+{\ttfamily \#include $<$user.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classUser_a4a0137053e591fbb79d9057dd7d2283d}{User}} ()
+\item 
+\mbox{\hyperlink{classUser_a26a5638c42bbcdec4169f75fbb0ad7b4}{User}} (const std\+::string \&\mbox{\hyperlink{classUser_aacbb807e514280f69e00bec7d71f3aee}{username}}, const std\+::string \&\mbox{\hyperlink{classUser_ac2f2e75b15e8eb6cbb030fc85a6cd59f}{password}}, double \mbox{\hyperlink{classUser_a44280dc9081c79ebc349275c48d4a754}{balance}})
+\end{DoxyCompactItemize}
+\begin{Indent}\textbf{ get\+Username}\par
+{\em Returns the username of the user.
+
+\begin{DoxyReturn}{Returns}
+The username of the user. 
+\end{DoxyReturn}
+}\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{classUser_a82e034043e04b2d750c654c8b2f2ce78}{get\+Username}} () const
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ get\+Password}\par
+{\em Returns the password of the user.
+
+\begin{DoxyReturn}{Returns}
+The password of the user. 
+\end{DoxyReturn}
+}\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{classUser_a33429bdd1253091697a9c5c5e1448bee}{get\+Password}} () const
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ get\+Balance}\par
+{\em Returns the balance of the user.
+
+\begin{DoxyReturn}{Returns}
+The balance of the user. 
+\end{DoxyReturn}
+}\begin{DoxyCompactItemize}
+\item 
+double \mbox{\hyperlink{classUser_afc6d6b84e71c2ed877ca8aa4c2435ae2}{get\+Balance}} () const
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ get\+Transaction\+Log}\par
+{\em Returns the transaction log of the user.
+
+\begin{DoxyReturn}{Returns}
+The transaction log of the user. 
+\end{DoxyReturn}
+}\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{classUser_a6e9c5478160f14eec2b29ef3a4cf5552}{get\+Transaction\+Log}} () const
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ update\+Balance}\par
+{\em Updates the balance of the user.
+
+
+\begin{DoxyParams}{Parameters}
+{\em amount} & The amount to update the balance with. \\
+\hline
+\end{DoxyParams}
+}\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classUser_a7d9ad4f26d84fa507be48b51261f2752}{update\+Balance}} (double amount)
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ add\+Transaction}\par
+{\em Adds a transaction to the transaction log of the user.
+
+
+\begin{DoxyParams}{Parameters}
+{\em transaction} & The transaction to add to the transaction log. \\
+\hline
+\end{DoxyParams}
+}\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classUser_a1fc2ac57edea8c00434709cd96f84dbc}{add\+Transaction}} (const std\+::string \&transaction)
+\end{DoxyCompactItemize}
+\end{Indent}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{classUser_aacbb807e514280f69e00bec7d71f3aee}{username}}
+\item 
+std\+::string \mbox{\hyperlink{classUser_ac2f2e75b15e8eb6cbb030fc85a6cd59f}{password}}
+\item 
+double \mbox{\hyperlink{classUser_a44280dc9081c79ebc349275c48d4a754}{balance}}
+\item 
+std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{classUser_a39403877f18d5cadb58ea0f94bd6f3c5}{transaction\+Log}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class for storing user data. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em username} & The username of the user. \\
+\hline
+{\em password} & The password of the user. \\
+\hline
+{\em balance} & The balance of the user. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classUser_a4a0137053e591fbb79d9057dd7d2283d}\label{classUser_a4a0137053e591fbb79d9057dd7d2283d} 
+\index{User@{User}!User@{User}}
+\index{User@{User}!User@{User}}
+\doxysubsubsection{\texorpdfstring{User()}{User()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily User\+::\+User (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classUser_a26a5638c42bbcdec4169f75fbb0ad7b4}\label{classUser_a26a5638c42bbcdec4169f75fbb0ad7b4} 
+\index{User@{User}!User@{User}}
+\index{User@{User}!User@{User}}
+\doxysubsubsection{\texorpdfstring{User()}{User()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily User\+::\+User (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{username,  }\item[{const std\+::string \&}]{password,  }\item[{double}]{balance }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classUser_a1fc2ac57edea8c00434709cd96f84dbc}\label{classUser_a1fc2ac57edea8c00434709cd96f84dbc} 
+\index{User@{User}!addTransaction@{addTransaction}}
+\index{addTransaction@{addTransaction}!User@{User}}
+\doxysubsubsection{\texorpdfstring{addTransaction()}{addTransaction()}}
+{\footnotesize\ttfamily void User\+::add\+Transaction (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{transaction }\end{DoxyParamCaption})}
+
+\Hypertarget{classUser_afc6d6b84e71c2ed877ca8aa4c2435ae2}\label{classUser_afc6d6b84e71c2ed877ca8aa4c2435ae2} 
+\index{User@{User}!getBalance@{getBalance}}
+\index{getBalance@{getBalance}!User@{User}}
+\doxysubsubsection{\texorpdfstring{getBalance()}{getBalance()}}
+{\footnotesize\ttfamily double User\+::get\+Balance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\Hypertarget{classUser_a33429bdd1253091697a9c5c5e1448bee}\label{classUser_a33429bdd1253091697a9c5c5e1448bee} 
+\index{User@{User}!getPassword@{getPassword}}
+\index{getPassword@{getPassword}!User@{User}}
+\doxysubsubsection{\texorpdfstring{getPassword()}{getPassword()}}
+{\footnotesize\ttfamily string User\+::get\+Password (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\Hypertarget{classUser_a6e9c5478160f14eec2b29ef3a4cf5552}\label{classUser_a6e9c5478160f14eec2b29ef3a4cf5552} 
+\index{User@{User}!getTransactionLog@{getTransactionLog}}
+\index{getTransactionLog@{getTransactionLog}!User@{User}}
+\doxysubsubsection{\texorpdfstring{getTransactionLog()}{getTransactionLog()}}
+{\footnotesize\ttfamily string User\+::get\+Transaction\+Log (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\Hypertarget{classUser_a82e034043e04b2d750c654c8b2f2ce78}\label{classUser_a82e034043e04b2d750c654c8b2f2ce78} 
+\index{User@{User}!getUsername@{getUsername}}
+\index{getUsername@{getUsername}!User@{User}}
+\doxysubsubsection{\texorpdfstring{getUsername()}{getUsername()}}
+{\footnotesize\ttfamily string User\+::get\+Username (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\Hypertarget{classUser_a7d9ad4f26d84fa507be48b51261f2752}\label{classUser_a7d9ad4f26d84fa507be48b51261f2752} 
+\index{User@{User}!updateBalance@{updateBalance}}
+\index{updateBalance@{updateBalance}!User@{User}}
+\doxysubsubsection{\texorpdfstring{updateBalance()}{updateBalance()}}
+{\footnotesize\ttfamily void User\+::update\+Balance (\begin{DoxyParamCaption}\item[{double}]{amount }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classUser_a44280dc9081c79ebc349275c48d4a754}\label{classUser_a44280dc9081c79ebc349275c48d4a754} 
+\index{User@{User}!balance@{balance}}
+\index{balance@{balance}!User@{User}}
+\doxysubsubsection{\texorpdfstring{balance}{balance}}
+{\footnotesize\ttfamily double User\+::balance\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classUser_ac2f2e75b15e8eb6cbb030fc85a6cd59f}\label{classUser_ac2f2e75b15e8eb6cbb030fc85a6cd59f} 
+\index{User@{User}!password@{password}}
+\index{password@{password}!User@{User}}
+\doxysubsubsection{\texorpdfstring{password}{password}}
+{\footnotesize\ttfamily std\+::string User\+::password\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classUser_a39403877f18d5cadb58ea0f94bd6f3c5}\label{classUser_a39403877f18d5cadb58ea0f94bd6f3c5} 
+\index{User@{User}!transactionLog@{transactionLog}}
+\index{transactionLog@{transactionLog}!User@{User}}
+\doxysubsubsection{\texorpdfstring{transactionLog}{transactionLog}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::string$>$ User\+::transaction\+Log\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classUser_aacbb807e514280f69e00bec7d71f3aee}\label{classUser_aacbb807e514280f69e00bec7d71f3aee} 
+\index{User@{User}!username@{username}}
+\index{username@{username}!User@{User}}
+\doxysubsubsection{\texorpdfstring{username}{username}}
+{\footnotesize\ttfamily std\+::string User\+::username\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+backend/\mbox{\hyperlink{user_8h}{user.\+h}}\item 
+backend/\mbox{\hyperlink{user_8cpp}{user.\+cpp}}\end{DoxyCompactItemize}

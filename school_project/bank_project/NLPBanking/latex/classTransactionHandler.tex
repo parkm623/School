@@ -1,0 +1,102 @@
+\hypertarget{classTransactionHandler}{}\doxysection{Transaction\+Handler Class Reference}
+\label{classTransactionHandler}\index{TransactionHandler@{TransactionHandler}}
+
+
+Class for handling transactions.  
+
+
+
+
+{\ttfamily \#include $<$transaction\+Handler.\+h$>$}
+
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum class \mbox{\hyperlink{classTransactionHandler_a3fe4542818df943a8c9eadbc3c190a55}{Transaction\+Type}} \{ \mbox{\hyperlink{classTransactionHandler_a3fe4542818df943a8c9eadbc3c190a55ae2c141e421f9862e778b1f7a0749989f}{DEPOSIT}}
+, \mbox{\hyperlink{classTransactionHandler_a3fe4542818df943a8c9eadbc3c190a55ad46cbcb197473899801adc52f1d94deb}{WITHDRAW}}
+, \mbox{\hyperlink{classTransactionHandler_a3fe4542818df943a8c9eadbc3c190a55abd50bfdaa74e237144552ad497048642}{BALANCE}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{classTransactionHandler_a04e34ad1289505fbbf76fd2dd7774251}{handle\+Transfer}} (\mbox{\hyperlink{classUser}{User}} $\ast$user, \mbox{\hyperlink{classUser}{User}} $\ast$recipient, double value)
+\begin{DoxyCompactList}\small\item\em Handles a transfer between two users. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static std\+::string \mbox{\hyperlink{classTransactionHandler_abbd0f2fa847e749031b47b34bb504fcf}{handle\+Transaction}} (\mbox{\hyperlink{classTransactionHandler_a3fe4542818df943a8c9eadbc3c190a55}{Transaction\+Type}} transaction\+Type, \mbox{\hyperlink{classUser}{User}} $\ast$user, double value)
+\begin{DoxyCompactList}\small\item\em Handles a transaction. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class for handling transactions. 
+
+\doxysubsection{Member Enumeration Documentation}
+\Hypertarget{classTransactionHandler_a3fe4542818df943a8c9eadbc3c190a55}\label{classTransactionHandler_a3fe4542818df943a8c9eadbc3c190a55} 
+\index{TransactionHandler@{TransactionHandler}!TransactionType@{TransactionType}}
+\index{TransactionType@{TransactionType}!TransactionHandler@{TransactionHandler}}
+\doxysubsubsection{\texorpdfstring{TransactionType}{TransactionType}}
+{\footnotesize\ttfamily enum class \mbox{\hyperlink{classTransactionHandler_a3fe4542818df943a8c9eadbc3c190a55}{Transaction\+Handler\+::\+Transaction\+Type}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DEPOSIT@{DEPOSIT}!TransactionHandler@{TransactionHandler}}\index{TransactionHandler@{TransactionHandler}!DEPOSIT@{DEPOSIT}}}\Hypertarget{classTransactionHandler_a3fe4542818df943a8c9eadbc3c190a55ae2c141e421f9862e778b1f7a0749989f}\label{classTransactionHandler_a3fe4542818df943a8c9eadbc3c190a55ae2c141e421f9862e778b1f7a0749989f} 
+DEPOSIT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{WITHDRAW@{WITHDRAW}!TransactionHandler@{TransactionHandler}}\index{TransactionHandler@{TransactionHandler}!WITHDRAW@{WITHDRAW}}}\Hypertarget{classTransactionHandler_a3fe4542818df943a8c9eadbc3c190a55ad46cbcb197473899801adc52f1d94deb}\label{classTransactionHandler_a3fe4542818df943a8c9eadbc3c190a55ad46cbcb197473899801adc52f1d94deb} 
+WITHDRAW&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BALANCE@{BALANCE}!TransactionHandler@{TransactionHandler}}\index{TransactionHandler@{TransactionHandler}!BALANCE@{BALANCE}}}\Hypertarget{classTransactionHandler_a3fe4542818df943a8c9eadbc3c190a55abd50bfdaa74e237144552ad497048642}\label{classTransactionHandler_a3fe4542818df943a8c9eadbc3c190a55abd50bfdaa74e237144552ad497048642} 
+BALANCE&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classTransactionHandler_abbd0f2fa847e749031b47b34bb504fcf}\label{classTransactionHandler_abbd0f2fa847e749031b47b34bb504fcf} 
+\index{TransactionHandler@{TransactionHandler}!handleTransaction@{handleTransaction}}
+\index{handleTransaction@{handleTransaction}!TransactionHandler@{TransactionHandler}}
+\doxysubsubsection{\texorpdfstring{handleTransaction()}{handleTransaction()}}
+{\footnotesize\ttfamily string Transaction\+Handler\+::handle\+Transaction (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classTransactionHandler_a3fe4542818df943a8c9eadbc3c190a55}{Transaction\+Type}}}]{transaction\+Type,  }\item[{\mbox{\hyperlink{classUser}{User}} $\ast$}]{user,  }\item[{double}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Handles a transaction. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em transaction\+Type} & The type of transaction to handle. \\
+\hline
+{\em user} & The user to handle the transaction for. \\
+\hline
+{\em value} & The value of the transaction. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classTransactionHandler_a04e34ad1289505fbbf76fd2dd7774251}\label{classTransactionHandler_a04e34ad1289505fbbf76fd2dd7774251} 
+\index{TransactionHandler@{TransactionHandler}!handleTransfer@{handleTransfer}}
+\index{handleTransfer@{handleTransfer}!TransactionHandler@{TransactionHandler}}
+\doxysubsubsection{\texorpdfstring{handleTransfer()}{handleTransfer()}}
+{\footnotesize\ttfamily bool Transaction\+Handler\+::handle\+Transfer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classUser}{User}} $\ast$}]{user,  }\item[{\mbox{\hyperlink{classUser}{User}} $\ast$}]{recipient,  }\item[{double}]{value }\end{DoxyParamCaption})}
+
+
+
+Handles a transfer between two users. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em user} & The user to transfer from. \\
+\hline
+{\em recipient} & The user to transfer to. \\
+\hline
+{\em value} & The value to transfer. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+backend/\mbox{\hyperlink{transactionHandler_8h}{transaction\+Handler.\+h}}\item 
+backend/\mbox{\hyperlink{transactionHandler_8cpp}{transaction\+Handler.\+cpp}}\end{DoxyCompactItemize}

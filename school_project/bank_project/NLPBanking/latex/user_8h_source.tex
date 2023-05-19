@@ -1,0 +1,41 @@
+\hypertarget{user_8h_source}{}\doxysection{user.\+h}
+\label{user_8h_source}\index{backend/user.h@{backend/user.h}}
+\mbox{\hyperlink{user_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#ifndef\ USER\_H}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#define\ USER\_H}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <iomanip>}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00022\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classUser}{User}}\ \{}
+\DoxyCodeLine{00023\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{comment}{//\ Constructors}}
+\DoxyCodeLine{00025\ \ \ \ \ \mbox{\hyperlink{classUser_a4a0137053e591fbb79d9057dd7d2283d}{User}}()\ :\ \mbox{\hyperlink{classUser_aacbb807e514280f69e00bec7d71f3aee}{username}}(\textcolor{stringliteral}{"{}"{}}),\ \mbox{\hyperlink{classUser_ac2f2e75b15e8eb6cbb030fc85a6cd59f}{password}}(\textcolor{stringliteral}{"{}"{}}),\ \mbox{\hyperlink{classUser_a44280dc9081c79ebc349275c48d4a754}{balance}}(0.0)\ \{\}}
+\DoxyCodeLine{00026\ \ \ \ \ \mbox{\hyperlink{classUser_a26a5638c42bbcdec4169f75fbb0ad7b4}{User}}(\textcolor{keyword}{const}\ std::string\&\ \mbox{\hyperlink{classUser_aacbb807e514280f69e00bec7d71f3aee}{username}},\ \textcolor{keyword}{const}\ std::string\&\ \mbox{\hyperlink{classUser_ac2f2e75b15e8eb6cbb030fc85a6cd59f}{password}},\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classUser_a44280dc9081c79ebc349275c48d4a754}{balance}});}
+\DoxyCodeLine{00027\ \ \ \ \ }
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{comment}{//\ Getters}}
+\DoxyCodeLine{00029\ \ \ \ \ std::string\ \mbox{\hyperlink{classUser_a82e034043e04b2d750c654c8b2f2ce78}{getUsername}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00030\ \ \ \ \ std::string\ \mbox{\hyperlink{classUser_a33429bdd1253091697a9c5c5e1448bee}{getPassword}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classUser_afc6d6b84e71c2ed877ca8aa4c2435ae2}{getBalance}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00032\ \ \ \ \ std::string\ \mbox{\hyperlink{classUser_a6e9c5478160f14eec2b29ef3a4cf5552}{getTransactionLog}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{comment}{//\ Setters}}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classUser_a7d9ad4f26d84fa507be48b51261f2752}{updateBalance}}(\textcolor{keywordtype}{double}\ amount);}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classUser_a1fc2ac57edea8c00434709cd96f84dbc}{addTransaction}}(\textcolor{keyword}{const}\ std::string\&\ transaction);}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{comment}{//\ Private\ variables}}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{comment}{//\ add\ recipient\ list}}
+\DoxyCodeLine{00041\ \ \ \ \ std::string\ \mbox{\hyperlink{classUser_aacbb807e514280f69e00bec7d71f3aee}{username}};}
+\DoxyCodeLine{00042\ \ \ \ \ std::string\ \mbox{\hyperlink{classUser_ac2f2e75b15e8eb6cbb030fc85a6cd59f}{password}};}
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classUser_a44280dc9081c79ebc349275c48d4a754}{balance}};}
+\DoxyCodeLine{00044\ \ \ \ \ std::vector<std::string>\ \mbox{\hyperlink{classUser_a39403877f18d5cadb58ea0f94bd6f3c5}{transactionLog}};}
+\DoxyCodeLine{00045\ \};}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

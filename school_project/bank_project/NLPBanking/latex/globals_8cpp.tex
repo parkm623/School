@@ -1,0 +1,99 @@
+\hypertarget{globals_8cpp}{}\doxysection{backend/globals.cpp File Reference}
+\label{globals_8cpp}\index{backend/globals.cpp@{backend/globals.cpp}}
+
+
+Global variable and function definitions Stores global mutex and mapping for active sessions to ensure one login per user Also contains general use functions such as hashing and timestamping.  
+
+
+{\ttfamily \#include \char`\"{}globals.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+string \mbox{\hyperlink{globals_8cpp_a9510ea567838ad92d38c2e5a428342cf}{get\+\_\+hash}} (const string \&str)
+\begin{DoxyCompactList}\small\item\em Hashes a string using SHA256 Allows for secure password storage and verification through user knowledge only. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{globals_8cpp_aac4a14ac12cdb5f5a320c468b6ed4c54}{get\+Timestamp}} ()
+\begin{DoxyCompactList}\small\item\em Returns the current timestamp in the format \mbox{[}YYYY-\/\+MM-\/\+DD HH\+:\+MM\+:SS\mbox{]} Used to get timestamps for log messages. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{globals_8cpp_a0dad10c66c4dad7bf052bd84443c1bca}{remove\+Characters}} (string str)
+\begin{DoxyCompactList}\small\item\em Removes all characters except for numbers and decimal points from a string Used to filter out unwanted characters from user input such as dollar signs. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+unordered\+\_\+map$<$ string, \mbox{\hyperlink{classSession}{Session}} $\ast$ $>$ \mbox{\hyperlink{globals_8cpp_a3d5ecc35cdd4e7fa52286e0260f69f9e}{active\+\_\+sessions}}
+\item 
+mutex \mbox{\hyperlink{globals_8cpp_a9630be8ee7f354f6e32b7343f7bb158d}{active\+\_\+sessions\+\_\+mutex}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Global variable and function definitions Stores global mutex and mapping for active sessions to ensure one login per user Also contains general use functions such as hashing and timestamping. 
+
+\begin{DoxyAuthor}{Author}
+Minsoo Park 
+\end{DoxyAuthor}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{globals_8cpp_a9510ea567838ad92d38c2e5a428342cf}\label{globals_8cpp_a9510ea567838ad92d38c2e5a428342cf} 
+\index{globals.cpp@{globals.cpp}!get\_hash@{get\_hash}}
+\index{get\_hash@{get\_hash}!globals.cpp@{globals.cpp}}
+\doxysubsubsection{\texorpdfstring{get\_hash()}{get\_hash()}}
+{\footnotesize\ttfamily string get\+\_\+hash (\begin{DoxyParamCaption}\item[{const string \&}]{str }\end{DoxyParamCaption})}
+
+
+
+Hashes a string using SHA256 Allows for secure password storage and verification through user knowledge only. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em str} & String to be hashed \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Hashed string 
+\end{DoxyReturn}
+\Hypertarget{globals_8cpp_aac4a14ac12cdb5f5a320c468b6ed4c54}\label{globals_8cpp_aac4a14ac12cdb5f5a320c468b6ed4c54} 
+\index{globals.cpp@{globals.cpp}!getTimestamp@{getTimestamp}}
+\index{getTimestamp@{getTimestamp}!globals.cpp@{globals.cpp}}
+\doxysubsubsection{\texorpdfstring{getTimestamp()}{getTimestamp()}}
+{\footnotesize\ttfamily string get\+Timestamp (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Returns the current timestamp in the format \mbox{[}YYYY-\/\+MM-\/\+DD HH\+:\+MM\+:SS\mbox{]} Used to get timestamps for log messages. 
+
+\begin{DoxyReturn}{Returns}
+Current timestamp 
+\end{DoxyReturn}
+\Hypertarget{globals_8cpp_a0dad10c66c4dad7bf052bd84443c1bca}\label{globals_8cpp_a0dad10c66c4dad7bf052bd84443c1bca} 
+\index{globals.cpp@{globals.cpp}!removeCharacters@{removeCharacters}}
+\index{removeCharacters@{removeCharacters}!globals.cpp@{globals.cpp}}
+\doxysubsubsection{\texorpdfstring{removeCharacters()}{removeCharacters()}}
+{\footnotesize\ttfamily string remove\+Characters (\begin{DoxyParamCaption}\item[{string}]{str }\end{DoxyParamCaption})}
+
+
+
+Removes all characters except for numbers and decimal points from a string Used to filter out unwanted characters from user input such as dollar signs. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em str} & String to be filtered \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Filtered string 
+\end{DoxyReturn}
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{globals_8cpp_a3d5ecc35cdd4e7fa52286e0260f69f9e}\label{globals_8cpp_a3d5ecc35cdd4e7fa52286e0260f69f9e} 
+\index{globals.cpp@{globals.cpp}!active\_sessions@{active\_sessions}}
+\index{active\_sessions@{active\_sessions}!globals.cpp@{globals.cpp}}
+\doxysubsubsection{\texorpdfstring{active\_sessions}{active\_sessions}}
+{\footnotesize\ttfamily unordered\+\_\+map$<$string, \mbox{\hyperlink{classSession}{Session}}$\ast$$>$ active\+\_\+sessions}
+
+\Hypertarget{globals_8cpp_a9630be8ee7f354f6e32b7343f7bb158d}\label{globals_8cpp_a9630be8ee7f354f6e32b7343f7bb158d} 
+\index{globals.cpp@{globals.cpp}!active\_sessions\_mutex@{active\_sessions\_mutex}}
+\index{active\_sessions\_mutex@{active\_sessions\_mutex}!globals.cpp@{globals.cpp}}
+\doxysubsubsection{\texorpdfstring{active\_sessions\_mutex}{active\_sessions\_mutex}}
+{\footnotesize\ttfamily mutex active\+\_\+sessions\+\_\+mutex}
+

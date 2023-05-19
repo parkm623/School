@@ -1,0 +1,68 @@
+\hypertarget{server_8cpp}{}\doxysection{backend/server.cpp File Reference}
+\label{server_8cpp}\index{backend/server.cpp@{backend/server.cpp}}
+
+
+Starts a server to handle NLP Banking client requests. Uses threads to handle many clients at once.  
+
+
+{\ttfamily \#include \char`\"{}server.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{server_8cpp_a1537273654e080f6272644b0b6b994d3}{handle\+\_\+session}} (int client\+\_\+socket, SSL $\ast$ssl)
+\begin{DoxyCompactList}\small\item\em Handles a session with a client. Creates a session for the client and starts the session. Shuts down the SSL afterwards and closes socket. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{server_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+\begin{DoxyCompactList}\small\item\em Starts the server and listens for incoming client requests. Initializes SSL, socket and address, and starts a new thread for each client. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const int \mbox{\hyperlink{server_8cpp_a11717c934f77ad5167dac5d28562d85a}{PORT}} = 3001
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Starts a server to handle NLP Banking client requests. Uses threads to handle many clients at once. 
+
+\begin{DoxyAuthor}{Author}
+Kaden Oseen 
+\end{DoxyAuthor}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{server_8cpp_a1537273654e080f6272644b0b6b994d3}\label{server_8cpp_a1537273654e080f6272644b0b6b994d3} 
+\index{server.cpp@{server.cpp}!handle\_session@{handle\_session}}
+\index{handle\_session@{handle\_session}!server.cpp@{server.cpp}}
+\doxysubsubsection{\texorpdfstring{handle\_session()}{handle\_session()}}
+{\footnotesize\ttfamily void handle\+\_\+session (\begin{DoxyParamCaption}\item[{int}]{client\+\_\+socket,  }\item[{SSL $\ast$}]{ssl }\end{DoxyParamCaption})}
+
+
+
+Handles a session with a client. Creates a session for the client and starts the session. Shuts down the SSL afterwards and closes socket. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em client\+\_\+socket} & The socket to communicate with the client. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{server_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{server_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4} 
+\index{server.cpp@{server.cpp}!main@{main}}
+\index{main@{main}!server.cpp@{server.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Starts the server and listens for incoming client requests. Initializes SSL, socket and address, and starts a new thread for each client. 
+
+\begin{DoxyReturn}{Returns}
+int Exit code. 
+\end{DoxyReturn}
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{server_8cpp_a11717c934f77ad5167dac5d28562d85a}\label{server_8cpp_a11717c934f77ad5167dac5d28562d85a} 
+\index{server.cpp@{server.cpp}!PORT@{PORT}}
+\index{PORT@{PORT}!server.cpp@{server.cpp}}
+\doxysubsubsection{\texorpdfstring{PORT}{PORT}}
+{\footnotesize\ttfamily const int PORT = 3001}
+
