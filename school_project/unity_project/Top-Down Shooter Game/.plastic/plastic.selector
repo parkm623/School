@@ -1,0 +1,3 @@
+rep "App3@charlie0701@cloud"
+  path "/"
+    smartbranch "/main"
